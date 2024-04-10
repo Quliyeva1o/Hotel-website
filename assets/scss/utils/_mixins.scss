@@ -1,0 +1,53 @@
+@mixin font($fz , $fw , $ff , $c) {
+    font-size: $fz ;
+    font-weight: $fw;
+    font-family: $ff;
+    color: $c;
+
+}
+
+@mixin size($w , $h , $p , $b) {
+    width: $w;
+    height: $h;
+    padding: $p;
+    border-radius: $b ;
+}
+
+@mixin colors($bgc, $c) {
+    background-color: $bgc;
+    color: $c;
+}
+
+ 
+
+
+
+@mixin for-phone {
+    @media screen and (max-width: $phone-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media screen and (max-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-laptop {
+    @media screen and (max-width: $desktop-breakpoint) and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-large-desktop {
+    @media screen and (max-width:$large-desktop-breakpoint) and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-xxl-large-desktop {
+    @media screen and (max-width:$xxl-large-desktop-breakpoint) {
+        @content;
+    }
+}

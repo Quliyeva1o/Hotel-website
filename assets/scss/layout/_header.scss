@@ -1,0 +1,90 @@
+header {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/images/herobgi.jpg);
+    height: 100vh;
+    background-size: cover;
+    min-height: 780px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ccc;
+    nav {
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: $worksans;
+        }
+        .nv {
+            padding-top: 40px;
+            z-index: 9;
+
+            .menu {
+                list-style: none;
+                justify-content: center;
+                margin: 0;
+
+                li {
+                    a {
+                        font-size: 14px;
+                        padding: 10px 10px;
+                        display: inline-block;
+                        color: rgba(255, 255, 255, 0.5);
+                        text-decoration: none !important;
+                        font-family: $roboto;
+                        transition: 0.3s;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+                .active a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .hero-section {
+        height: calc(100vh - 120px);
+        flex-direction: column;
+        margin: 0 auto;
+        h1 {
+            color: #fff;
+            opacity: 1;
+            font-size: 50px;
+
+            font-weight: 700;
+            margin-bottom: 3rem;
+            font-family: $worksans;
+        }
+        a {
+            @extend .btn1
+        }
+    }
+    .tel {
+        .call-us  {
+            color: #fff;
+            i {
+                color: #fff;
+                flex: 0 0 38px;
+                line-height: 36px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                margin-right: 10px;
+                text-align: center;
+                font-size: 11px;
+                transition: 0.3s;
+                &:hover {
+                    background: transparent;
+                    border: 1px solid #fff;
+                }
+            }
+
+        }
+        .burger{
+            i{
+                color: #fff;
+                font-size: 30px;
+            }
+        }
+    }
+}

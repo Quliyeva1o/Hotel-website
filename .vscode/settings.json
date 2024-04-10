@@ -1,0 +1,40 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../css"
+        }
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.excludeList": [],
+    "files.autoSave": "afterDelay",
+    "[css]": {
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ],
+    },
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "rapidapi.terminalLink.enabled": false,
+    "git.openRepositoryInParentFolders": "never",
+    "tabnine.experimentalAutoImports": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0,
+    "liveServer.settings.port": 5501
+}
