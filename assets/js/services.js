@@ -15,10 +15,10 @@ const contentWarning = document.getElementById("content-warning")
 const iconWarning = document.getElementById("icon-warning")
 const titleCharWarning = document.getElementById("title-char-warning")
 const contentCharWarning = document.getElementById("content-char-warning")
-// Create Service instances
+const swiperEl = document.querySelector('swiper-container')
+const sortByNameSelect = document.querySelector("#sort-by-name");
 
 
-// Class for Service
 class Service {
     constructor(title, content, icon) {
         this.title = title;
@@ -67,15 +67,13 @@ const service6 = new Service(
 
 const servicesArray = [service1, service2, service3, service4, service5, service6];
 
-// Function to add a new service
-// Function to add a new service
+
 function addService() {
     const title = titleInput.value.trim();
     const content = contentInput.value.trim();
     const icon = iconInput.value.trim();
 
     if (!title || !content || !icon) {
-        // Show appropriate warnings
         if (!title) titleWarning.classList.replace('d-none', 'd-block');
         if (!content) contentWarning.classList.replace('d-none', 'd-block');
         if (!icon) iconWarning.classList.replace('d-none', 'd-block');
@@ -94,12 +92,11 @@ function addService() {
     servicesArray.push(newService);
     clearInputs();
     modal.style.display = "none";
-    renderServices();
-    attachDeleteListeners(); // Call attachDeleteListeners after adding a new service
+    renderServices(servicesArray);
+    attachDeleteListeners();
 }
 
 
-// Function to clear input fields and warnings
 function clearInputs() {
     titleInput.value = "";
     contentInput.value = "";
@@ -111,16 +108,17 @@ function clearInputs() {
     contentCharWarning.classList.replace('d-block', 'd-none');
 }
 
-// Function to render services
-function renderServices() {
+function renderServices(array) {
     services.innerHTML = "";
-    servicesArray.forEach(service => {
+    array.forEach(service => {
         services.innerHTML += renderServiceHTML(service);
     });
     attachDeleteListeners();
 }
 
-// Function to render HTML for a service
+
+
+
 function renderServiceHTML(service) {
     return `
         <swiper-slide>
@@ -145,7 +143,6 @@ function renderServiceHTML(service) {
 
 }
 
-// Function to attach delete listeners to delete buttons
 function attachDeleteListeners() {
     const deleteBtns = document.querySelectorAll(".del");
     deleteBtns.forEach(deleteBtn => {
@@ -156,13 +153,12 @@ function attachDeleteListeners() {
             const idx = servicesArray.findIndex(service => service.id === idToDelete);
             if (idx !== -1) {
                 servicesArray.splice(idx, 1);
-                renderServices();
+                renderServices(servicesArray);
             }
         });
     });
 }
 
-// Event listeners
 addBtn.addEventListener("click", (e) => {
     e.preventDefault();
     modal.style.display = "flex";
@@ -224,9 +220,43 @@ searchInput.addEventListener('keyup', () => {
 
 showAll.addEventListener('click', (e) => {
     e.preventDefault();
-    renderServices();
+    renderServices(servicesArray);
 });
 
-// Initial rendering
-renderServices();
+
+function nextSlide() {
+    swiperEl.swiper.slideNext();
+}
+
+function prevSlide() {
+    swiperEl.swiper.slidePrev();
+}
+
+
+
+
+renderServices(servicesArray);
 attachDeleteListeners();
+
+
+sortByNameSelect.addEventListener('change', function (e) {
+    sortByName(this.value);
+    e.preventDefault()
+
+})
+
+function sortByName(value) {
+ let newSortArr = [...servicesArray]
+    if (value == 'a-z') {
+        newSortArr = newSortArr.sort((x, y) => x.title.localeCompare(y.title));
+        renderServices(newSortArr)
+
+
+    }
+    else if (value == 'z-a') {
+       
+        newSortArr = newSortArr.sort((x, y) => y.title.localeCompare(x.title));
+        renderServices(newSortArr)
+
+    }
+}

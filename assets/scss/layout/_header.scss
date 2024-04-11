@@ -1,5 +1,6 @@
 header {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/images/herobgi.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../../../assets/images/herobgi.jpg);
     height: 100vh;
     background-size: cover;
     min-height: 780px;
@@ -57,11 +58,11 @@ header {
             font-family: $worksans;
         }
         a {
-            @extend .btn1
+            @extend .btn1;
         }
     }
     .tel {
-        .call-us  {
+        .call-us {
             color: #fff;
             i {
                 color: #fff;
@@ -78,13 +79,81 @@ header {
                     border: 1px solid #fff;
                 }
             }
-
         }
-        .burger{
-            i{
+        .burger {
+            i {
                 color: #fff;
                 font-size: 30px;
             }
         }
+    }
+}
+header {
+    .nav-active {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding-bottom: 30px;
+        transition: 0.3s;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        .fa-bars {
+            color: $green!important;
+        }
+        nav {
+            .nv {
+                padding-top: 30px;
+                .menu {
+                    li {
+                        a {
+                            color: #007564;
+                            transition: 0.3s;
+                        }
+                    }
+                    .active {
+                        a {
+                            color: #005044;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        .tel .call-us {
+            color: #005044;
+            i {
+                color: #005044;
+                background: rgba(0, 83, 70, 0.445);
+            }
+        }
+
+        nav .logo {
+            color: #005044 !important;
+        }
+    }
+}
+
+.offcanvas {
+    width: 300px !important;
+    .menu-sidebar {
+        list-style: none;
+        margin-top: 45px;
+        li {
+            padding: 2px;
+            transition: 0.4s;
+            .active {
+                color: $green;
+            }
+            a {
+                color: #000;
+                font-weight: 400;
+                font-family: $roboto;
+                font-size: 14px;
+            }
+        }
+    }
+    .btn-close {
+        right: 15px;
+        top: 15px;
+        position: absolute;
     }
 }

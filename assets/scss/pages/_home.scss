@@ -23,7 +23,7 @@
             @extend .btn1;
             margin-left: 10px;
             text-wrap: nowrap;
-            @include for-phone{
+            @include for-phone {
                 padding: 15px;
             }
         }
@@ -59,13 +59,10 @@
         @include for-tablet {
             width: 35%;
             padding: 30px;
-
         }
         @include for-phone {
             width: 70%;
             padding: 20px;
-
-
         }
 
         text-align: center;
@@ -120,12 +117,13 @@
 
     swiper-slide:first-child {
         margin-left: 80px;
-        @include for-phone{
+        @include for-phone {
             margin-left: 30px;
         }
     }
 
     .modal {
+        background-color: rgba(0,0,0,0.7);
         align-items: center;
         .modal-content {
             padding: 30px;
@@ -156,3 +154,26 @@
         }
     }
 }
+
+.custom-pagination {
+    display: flex;
+    padding: 4rem 0;
+    column-gap: 10px;
+    div {
+        display: inline-block;
+        cursor: pointer;
+        padding: 7px 20px ;
+        background-color: transparent;
+        border-color: transparent;
+        color: #000;
+        border-radius: 30px;
+        transition: .3s;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            border-color: #000;
+        }
+    }
+}
+
+

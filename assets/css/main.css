@@ -146,6 +146,65 @@ header .tel .burger i {
   font-size: 30px;
 }
 
+header .nav-active {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-bottom: 30px;
+  transition: 0.3s;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+header .nav-active .fa-bars {
+  color: #00917c !important;
+}
+header .nav-active nav .nv {
+  padding-top: 30px;
+}
+header .nav-active nav .nv .menu li a {
+  color: #007564;
+  transition: 0.3s;
+}
+header .nav-active nav .nv .menu .active a {
+  color: #005044;
+  font-weight: 500;
+}
+header .nav-active .tel .call-us {
+  color: #005044;
+}
+header .nav-active .tel .call-us i {
+  color: #005044;
+  background: rgba(0, 83, 70, 0.445);
+}
+header .nav-active nav .logo {
+  color: #005044 !important;
+}
+
+.offcanvas {
+  width: 300px !important;
+}
+.offcanvas .menu-sidebar {
+  list-style: none;
+  margin-top: 45px;
+}
+.offcanvas .menu-sidebar li {
+  padding: 2px;
+  transition: 0.4s;
+}
+.offcanvas .menu-sidebar li .active {
+  color: #00917c;
+}
+.offcanvas .menu-sidebar li a {
+  color: #000;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+.offcanvas .btn-close {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+}
+
 .search-section {
   margin-top: -50px;
   position: relative;
@@ -262,6 +321,7 @@ header .tel .burger i {
   }
 }
 .our-services-section .modal {
+  background-color: rgba(0, 0, 0, 0.7);
   align-items: center;
 }
 .our-services-section .modal .modal-content {
@@ -286,4 +346,24 @@ header .tel .burger i {
   color: red;
   padding-left: 15px;
   margin-bottom: 15px;
+}
+
+.custom-pagination {
+  display: flex;
+  padding: 4rem 0;
+  column-gap: 10px;
+}
+.custom-pagination div {
+  display: inline-block;
+  cursor: pointer;
+  padding: 7px 20px;
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.custom-pagination div:hover {
+  border-color: #000;
 }/*# sourceMappingURL=main.css.map */
