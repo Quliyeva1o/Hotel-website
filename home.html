@@ -10,82 +10,92 @@
 
 <body>
 
-
+    <!--header start-->
     <header>
         <div class="" id="nav-scroll">
-        <nav class="container">
-            <div class="nv">
-                <div class="menu-bg-wrap">
-                    <div class="site-navigation">
-                        <div class="row g-0 align-items-center ">
-                            <div class="col-2 logo">
-                                <a href="index.html" class="logo m-0 float-start text-white">Hotell</a>
+            <nav class="container">
+                <div class="nv">
+                    <div class="menu-bg-wrap">
+                        <div class="site-navigation">
+                            <div class="row g-0 align-items-center ">
+                                <div class="col-2 logo">
+                                    <a href="index.html" class="logo m-0 float-start text-white">Hotell</a>
+                                </div>
+                                <div class="col-8 text-center">
+                                    <ul class=" d-none d-lg-flex text-start menu mx-auto ">
+                                        <li class="active"><a href="index.html">Home</a></li>
+                                        <li><a href="destination.html" class="dest">Destination</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-2 tel">
+                                    <a href="#" class="call-us d-flex align-items-center d-lg-flex d-none">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span>123-489-9381</span>
+                                    </a>
+
+
+                                    <a href="#"
+                                        class="navbar-toggler burger ms-auto float-end site-menu-toggle d-lg-none"
+                                        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                        <i class="fa-solid fa-bars"></i>
+                                    </a>
+
+                                </div>
+                                <aside class="offcanvas offcanvas-end" id="offcanvasNavbar"
+                                    aria-labelledby="offcanvasNavbarLabel">
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+
+
+                                    <ul class="menu-sidebar">
+                                        <li>
+                                            <a href="home.html" class="active">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="menu.html">Destination</a>
+                                        </li>
+                                        <li>
+                                            <a href="gallery.html">Services</a>
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog.html">Contact</a>
+                                        </li>
+
+                                    </ul>
+
+                                </aside>
                             </div>
-                            <div class="col-8 text-center">
-                                <ul class=" d-none d-lg-flex text-start menu mx-auto ">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="destination.html" class="dest">Destination</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 tel">
-                                <a href="#" class="call-us d-flex align-items-center d-lg-flex d-none">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>123-489-9381</span>
-                                </a>
-
-
-                                <a href="#" class="navbar-toggler burger ms-auto float-end site-menu-toggle d-lg-none"
-                                    type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                                    <i class="fa-solid fa-bars"></i>
-                                </a>
-
-                            </div>
-                            <aside class="offcanvas offcanvas-end" id="offcanvasNavbar"
-                                aria-labelledby="offcanvasNavbarLabel">
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-
-
-                                <ul class="menu-sidebar">
-                                    <li >
-                                        <a href="home.html" class="active">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="menu.html">Destination</a>
-                                    </li>
-                                    <li>
-                                        <a href="gallery.html">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="about.html">About</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog.html">Contact</a>
-                                    </li>
-                                  
-                                </ul>
-
-                            </aside>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
         <div class="container">
             <div class="hero-section col-lg-8 text-center d-flex justify-content-center">
                 <h1 class="w-100">Once a year go someplace you've never
                     been before.</h1>
-                <a href="">See video</a>
+                <a href="" id="see-video-btn">See video</a>
+
             </div>
         </div>
+        <div class="video-modal d-none">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9NTrwrfI-X4?si=eCsYFBaSyQP891vb"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
 
+        <!--header end-->
     </header>
 
+    <!--search section-->
     <section class="search-section">
         <div class="container flex-column flex-lg-row   ">
 
@@ -102,69 +112,115 @@
             </div>
 
         </div>
+        <!--search section end-->
     </section>
 
-
+    <!--our services start-->
     <section class="our-services-section">
         <div class="container d-flex justify-content-between ">
             <h4>
                 Our services
             </h4>
+
             <div class="sort-add d-lg-flex d-md-flex">
-                <select name="sort-by-name" id="sort-by-name" class="form-select w-100 m-3 ">
+                <select name="sort-by-name" id="sort-by-name" class="form-select w-100  ">
                     <option value="" selected disabled>select filter</option>
                     <option value="a-z">A-Z</option>
                     <option value="z-a">Z-A</option>
                 </select>
-            <a href="" id="add" class="m-3 ">Add service</a></div>
+                <a href="" id="add" class="m-3 ">Add service</a>
+            </div>
         </div>
         <div id="modal" class="modal ">
             <div class="modal-content container">
                 <span class="close">&times;</span>
                 <input type="text" id="titleInput" placeholder="Title" class="form-control ">
-                <span id="title-warning"class="d-none">input is empty!</span>
-                <span id="title-char-warning"class="d-none">title should be min 3 char!</span>
+                <span id="title-warning" class="d-none">input is empty!</span>
+                <span id="title-char-warning" class="d-none">title should be min 3 char!</span>
 
                 <input type="text" id="contentInput" placeholder="Content" class="form-control ">
-                <span id="content-warning"class="d-none">input is empty!</span>
-                <span id="content-char-warning"class="d-none">content should be min 10 char!</span>
+                <span id="content-warning" class="d-none">input is empty!</span>
+                <span id="content-char-warning" class="d-none">content should be min 10 char!</span>
 
                 <input type="text" id="iconInput" placeholder="Icon source" class="form-control ">
-                <span id="icon-warning"class="d-none">input is empty!</span>
+                <span id="icon-warning" class="d-none">input is empty!</span>
 
                 <button id="addService">Add</button>
             </div>
         </div>
-        
-        <swiper-container class="mySwiper" id="services" space-between="30" slides-per-view="auto">
-          <!-- Swiper slides here -->
-        </swiper-container>
+
+
+        <!--our services slider-->
+        <div class="slider-container ">
+            <div class="slider-wrapper">
+                <div class="slider-list" id="services">
+                </div>
+            </div>
+        </div>
+
         <div class="custom-pagination container">
-            <div class="custom-pagination-button" onclick="prevSlide()">Prev</div>
-            <div class="custom-pagination-button" onclick="nextSlide()">Next</div>
-          </div>
-        
-        
+            <div class="custom-pagination-button" id="prev-btn">Prev</div>
+            <div class="custom-pagination-button" id="next-btn">Next</div>
+        </div>
 
+        <div class="d-none" id="service-modal">
 
+        </div>
+        <!--our services slider end-->
+        <!---our services end-->
+
+    </section>
+    <!--about section-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6 image">
+                    <img src="assets/images/about.jpg" alt="Image" class="w-100">
+                </div>
+                <div class="col-lg-4 align-self-center content">
+                    <h2 class="heading mb-4">About Hotell</h2>
+                    <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and
+                        Consonantia, there
+                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                        a large language ocean.</p>
+                    <p class="p">
+                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It
+                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
 
+    <section class="blog-section">
+        <div class="container">
+            <h1 class="heading">BLOG POSTS</h1>
+        </div>
+        <div class="blog-slider">
+            <div class="container" id="blogs">
+            </div>
 
+        </div>
+        <div class="blog-modal d-none " id="blog-modal">
+            
+        </div>
+        <div class="custom-pagination container justify-content-center ">
+            <div class="custom-pagination-button" id="blog-prev-btn">Prev</div>
+            <div class="custom-pagination-button" id="blog-next-btn">Next</div>
+        </div>
+
+    </section>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-
-    <script src="assets/js/services.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script src="assets/js/nav.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/seeVideo.js"></script>
+    <script src="assets/js/blog.js"></script>
 </body>
 
 </html>

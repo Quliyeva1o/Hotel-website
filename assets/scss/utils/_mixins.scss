@@ -35,13 +35,13 @@
 }
 
 @mixin for-laptop {
-    @media screen and (max-width: $desktop-breakpoint) and (min-width: $tablet-breakpoint) {
+    @media screen and (max-width: $desktop-breakpoint) {
         @content;
     }
 }
 
 @mixin for-large-desktop {
-    @media screen and (max-width:$large-desktop-breakpoint) and (min-width: $desktop-breakpoint) {
+    @media screen and (max-width:$large-desktop-breakpoint){
         @content;
     }
 }

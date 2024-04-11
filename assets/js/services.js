@@ -17,7 +17,9 @@ const titleCharWarning = document.getElementById("title-char-warning")
 const contentCharWarning = document.getElementById("content-char-warning")
 const swiperEl = document.querySelector('swiper-container')
 const sortByNameSelect = document.querySelector("#sort-by-name");
-
+const nextBtn = document.getElementById("next-btn")
+const prevBtn = document.getElementById("prev-btn")
+const serviceModal = document.getElementById("service-modal")
 
 class Service {
     constructor(title, content, icon) {
@@ -68,6 +70,36 @@ const service6 = new Service(
 const servicesArray = [service1, service2, service3, service4, service5, service6];
 
 
+//CLICKS
+searchInput.addEventListener('keyup', () => {
+    if (searchInput.value.trim() !== "") {
+        searchInputWarn.classList.replace('d-flex', 'd-none');
+    }
+});
+
+showAll.addEventListener('click', (e) => {
+    e.preventDefault();
+    renderServices(servicesArray);
+});
+
+nextBtn.addEventListener("click", () => {
+    const itemWidth = services.querySelector('.slider-item').offsetWidth;
+    services.scrollBy({ left: itemWidth, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+    const itemWidth = services.querySelector('.slider-item').offsetWidth;
+    services.scrollBy({ left: -itemWidth, behavior: "smooth" });
+});
+
+sortByNameSelect.addEventListener('change', function (e) {
+    sortByName(this.value);
+    e.preventDefault()
+
+})
+
+
+//ADD FUNCTION 
 function addService() {
     const title = titleInput.value.trim();
     const content = contentInput.value.trim();
@@ -96,6 +128,87 @@ function addService() {
     attachDeleteListeners();
 }
 
+//DELETE FUNCTION
+function attachDeleteListeners() {
+    const deleteBtns = document.querySelectorAll(".del");
+    deleteBtns.forEach(deleteBtn => {
+        deleteBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const idToDelete = parseInt(this.dataset.id);
+            const idx = servicesArray.findIndex(service => service.id === idToDelete);
+            if (idx !== -1) {
+                servicesArray.splice(idx, 1);
+                renderServices(servicesArray);
+            }
+        });
+    });
+}
+
+//LEARN MORE FUNCTION
+function learnMore() {
+    const learnMoreBtns = document.querySelectorAll(".learn-more-btn");
+    learnMoreBtns.forEach(learnMoreBtn => {
+        learnMoreBtn.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            const idToLearn = parseInt(this.dataset.id);
+            const service = servicesArray.find(service => service.id === idToLearn);
+            console.log(service);
+            serviceModal.classList.replace('d-none', 'd-flex')
+            window.addEventListener('click', serviceoutsideClick);
+            function serviceoutsideClick(e) {
+                if (e.target === serviceModal) {
+                    serviceModal.classList.replace('d-flex', 'd-none')
+                    window.removeEventListener('click', serviceoutsideClick);
+                }
+            }
+            if (service) {
+                serviceModal.innerHTML = renderServiceHTML(service)
+            }
+        });
+    });
+}
+
+
+
+
+//SEARCH FUNCTION
+searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (searchInput.value === "") {
+        searchInputWarn.classList.replace('d-none', 'd-flex');
+    } else {
+        services.innerHTML = "";
+        const filteredServices = servicesArray.filter(service =>
+            service.title.trim().toLowerCase().includes(searchInput.value.trim().toLowerCase())
+        );
+        filteredServices.forEach(service => {
+            services.innerHTML += renderServiceHTML(service);
+        });
+        searchInput.value = "";
+    }
+});
+
+
+
+//SORTBYNAME FUNCTION
+function sortByName(value) {
+    let newSortArr = [...servicesArray]
+    if (value == 'a-z') {
+        newSortArr = newSortArr.sort((x, y) => x.title.localeCompare(y.title));
+        renderServices(newSortArr)
+    }
+    else if (value == 'z-a') {
+        newSortArr = newSortArr.sort((x, y) => y.title.localeCompare(x.title));
+        renderServices(newSortArr)
+    }
+}
+
+
+
+
+
 
 function clearInputs() {
     titleInput.value = "";
@@ -114,6 +227,7 @@ function renderServices(array) {
         services.innerHTML += renderServiceHTML(service);
     });
     attachDeleteListeners();
+    learnMore()
 }
 
 
@@ -121,7 +235,7 @@ function renderServices(array) {
 
 function renderServiceHTML(service) {
     return `
-        <swiper-slide>
+        <div class="slider-item">
             <div class="box text-start w-100">
                 <div class="img">
                     <img src="${service.icon}" alt="">
@@ -133,31 +247,23 @@ function renderServiceHTML(service) {
                 <div class="learn-more">
                     <span>${service.created_at}</span>
                     <div class="d-flex links">
-                        <a href="">Learn more</a>
+                        <a href="" class="learn-more-btn" data-id="${service.id}">Learn more</a>
                         <a href="#" class="del" data-id="${service.id}">Delete</a>
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+        </div>
     `;
 
 }
 
-function attachDeleteListeners() {
-    const deleteBtns = document.querySelectorAll(".del");
-    deleteBtns.forEach(deleteBtn => {
-        deleteBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            const idToDelete = parseInt(this.dataset.id);
-            console.log(idToDelete);
-            const idx = servicesArray.findIndex(service => service.id === idToDelete);
-            if (idx !== -1) {
-                servicesArray.splice(idx, 1);
-                renderServices(servicesArray);
-            }
-        });
-    });
-}
+
+
+
+
+
+
+
 
 addBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -196,41 +302,14 @@ titleInput.addEventListener('keyup', () => {
     }
 });
 
-searchBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (searchInput.value === "") {
-        searchInputWarn.classList.replace('d-none', 'd-flex');
-    } else {
-        services.innerHTML = "";
-        const filteredServices = servicesArray.filter(service =>
-            service.title.trim().toLowerCase().includes(searchInput.value.trim().toLowerCase())
-        );
-        filteredServices.forEach(service => {
-            services.innerHTML += renderServiceHTML(service);
-        });
-        searchInput.value = "";
-    }
-});
-
-searchInput.addEventListener('keyup', () => {
-    if (searchInput.value.trim() !== "") {
-        searchInputWarn.classList.replace('d-flex', 'd-none');
-    }
-});
-
-showAll.addEventListener('click', (e) => {
-    e.preventDefault();
-    renderServices(servicesArray);
-});
 
 
-function nextSlide() {
-    swiperEl.swiper.slideNext();
-}
 
-function prevSlide() {
-    swiperEl.swiper.slidePrev();
-}
+
+
+
+
+
 
 
 
@@ -239,24 +318,5 @@ renderServices(servicesArray);
 attachDeleteListeners();
 
 
-sortByNameSelect.addEventListener('change', function (e) {
-    sortByName(this.value);
-    e.preventDefault()
-
-})
-
-function sortByName(value) {
- let newSortArr = [...servicesArray]
-    if (value == 'a-z') {
-        newSortArr = newSortArr.sort((x, y) => x.title.localeCompare(y.title));
-        renderServices(newSortArr)
 
 
-    }
-    else if (value == 'z-a') {
-       
-        newSortArr = newSortArr.sort((x, y) => y.title.localeCompare(x.title));
-        renderServices(newSortArr)
-
-    }
-}
