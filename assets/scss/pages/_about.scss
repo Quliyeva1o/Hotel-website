@@ -1,0 +1,88 @@
+.about-testimonials {
+    padding: 7rem 0;
+    background-color: #f8f9fa;
+
+    .test-slider-content {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 50px;
+
+        .item {
+            width: calc(100% / 3);
+            display: inline-block;
+            @include for-tablet {
+                width: calc(100% / 2);
+            }
+            @include for-phone {
+                width: calc(100%);
+            }
+            .testimonial {
+                padding: 40px;
+                background-color: #fff;
+                box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+                vertical-align: top;
+                white-space: normal;
+                margin-right: 30px;
+                position: relative;
+
+                @include for-tablet {
+                    padding: 20px;
+                }
+                @include for-phone {
+                    margin-right: 0;
+                    padding: 30px;
+                }
+
+                .img {
+                    width: 50%;
+                    padding-bottom: 1.5rem;
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+
+                }
+            }
+            .text {
+                strong {
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 20px;
+                    font-family: $roboto;
+                }
+                span {
+                    @extend p;
+                    font-size: 14px!important;
+                    font-family: $roboto;
+                }
+            }
+            .deltes {
+                @extend .btn1;
+                padding: 10px 25px;
+            }
+        }
+
+        p {
+            @extend .p;
+            font-size: 14px!important;
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+
+            @include for-tablet {
+                font-size: 16px;
+            }
+            @include for-phone {
+                font-size: 18px;
+            }
+        }
+    }
+    .link{
+    @extend .p;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+}
+

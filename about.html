@@ -13,7 +13,7 @@
 <body>
 
     <!--header start-->
-    <header>
+    <header class="our-services-header">
         <div class="" id="nav-scroll">
             <nav class="container">
                 <div class="nv">
@@ -81,9 +81,10 @@
         </div>
         <div class="container">
             <div class="hero-section col-lg-8 text-center d-flex justify-content-center">
-                <h1 class="w-100">Once a year go someplace you've never
-                    been before.</h1>
-                <a href="" id="see-video-btn">See video</a>
+                <h1 class="w-100">About Us</h1>
+                <p class="text-white-50 w-75 mx-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">Far
+                    far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                    blind texts.</p>
 
             </div>
         </div>
@@ -97,81 +98,8 @@
         <!--header end-->
     </header>
 
-    <!--search section-->
-    <section class="search-section">
-        <div class="container flex-column flex-lg-row   ">
-
-            <div class="w-100">
-                <div class="form ">
-                    <div><input type="text" id="search-input" placeholder="Search services" class="form-control ">
-                        <span id="search-input-warn" class="d-none">input is empty!</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex h-100 col-md-12 col-sm-12">
-                <button class="w-100" id="search-btn">Find now</button>
-                <button class="w-100" id="show-all-btn">Show All</button>
-            </div>
-
-        </div>
-        <!--search section end-->
-    </section>
-
-    <!--our services start-->
-    <section class="our-services-section">
-        <div class="container d-flex justify-content-between ">
-            <h4>
-                Our services
-            </h4>
-
-            <div class="sort-add d-lg-flex d-md-flex">
-                <select name="sort-by-name" id="sort-by-name" class="form-select w-100  ">
-                    <option value="" selected disabled>select filter</option>
-                    <option value="a-z">A-Z</option>
-                    <option value="z-a">Z-A</option>
-                </select>
-                <a href="" id="add" class="m-3 ">Add service</a>
-            </div>
-        </div>
-        <div id="modal" class="modal ">
-            <div class="modal-content container">
-                <span class="close">&times;</span>
-                <input type="text" id="titleInput" placeholder="Title" class="form-control ">
-                <span id="title-warning" class="d-none">input is empty!</span>
-                <span id="title-char-warning" class="d-none">title should be min 3 char!</span>
-
-                <input type="text" id="contentInput" placeholder="Content" class="form-control ">
-                <span id="content-warning" class="d-none">input is empty!</span>
-                <span id="content-char-warning" class="d-none">content should be min 10 char!</span>
-
-                <input type="text" id="iconInput" placeholder="Icon source" class="form-control ">
-                <span id="icon-warning" class="d-none">input is empty!</span>
-
-                <button id="addService">Add</button>
-            </div>
-        </div>
 
 
-        <!--our services slider-->
-        <div class="slider-container ">
-            <div class="slider-wrapper">
-                <div class="slider-list" id="services">
-                </div>
-            </div>
-        </div>
-
-        <div class="custom-pagination container">
-            <div class="custom-pagination-button" id="prev-btn">Prev</div>
-            <div class="custom-pagination-button" id="next-btn">Next</div>
-        </div>
-
-        <div class="d-none" id="service-modal">
-
-        </div>
-        <!--our services slider end-->
-        <!---our services end-->
-
-    </section>
     <!--about section-->
     <section class="about-section">
         <div class="container">
@@ -180,7 +108,8 @@
                     <img src="assets/images/about.jpg" alt="Image" class="w-100">
                 </div>
                 <div class="col-lg-4 align-self-center content">
-                    <h2 class="heading mb-4">About Hotell</h2>
+                    <h2 class="heading mb-4">HISTORY
+                    </h2>
                     <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and
                         Consonantia, there
                         live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
@@ -193,47 +122,7 @@
         </div>
     </section>
 
-
-    <section class="blog-section">
-        <div class="container">
-            <h1 class="heading">BLOG POSTS</h1>
-        </div>
-        <div class="blog-slider">
-            <div class="container" id="blogs">
-            </div>
-
-        </div>
-        <div class="blog-modal d-none " id="blog-modal">
-
-        </div>
-        <div class="custom-pagination container justify-content-center ">
-            <div class="custom-pagination-button" id="blog-prev-btn">Prev</div>
-            <div class="custom-pagination-button" id="blog-next-btn">Next</div>
-        </div>
-
-    </section>
-
-    <section class="faqs-section">
-
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-3 mt-4 ">
-                    <h2 class="heading text-black">Frequently Asked Questions</h2>
-                </div>
-                <div class="col-lg-8 ">
-                    <div class="accordion" id="accordion">
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="testimonials">
+    <section class="about-testimonials">
         <div class="container">
             <div class="row align-items-center justify-content-between ">
                 <div class="col-lg-3">
@@ -245,7 +134,7 @@
                         is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                 </div>
                 <div class="col-lg-3 justify-content-end d-flex">
-                    <a href="" class="btn1 text-nowrap m-0" id="add-employee">Add employee</a>
+                    <a href="" class="btn1 text-nowrap m-0 d-flex justify-content-center " id="add-employee">Add employee</a>
                 </div>
 
 
@@ -283,7 +172,6 @@
 
         </div>
     </section>
-
 
     <section class="section sec-instagram">
         <div class="container mb-5">
@@ -559,6 +447,7 @@
     </section>
 
 
+
     <footer class="site-footer bg-light">
         <div class="container">
             <div class="row">
@@ -632,15 +521,12 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-    <script src="assets/js/services.js"></script>
-    <script src="assets/js/nav.js"></script>
-    <script src="assets/js/seeVideo.js"></script>
-    <script src="assets/js/blog.js"></script>
-    <script src="assets/js/faqs.js"></script>
-    <script src="assets/js/testimonials.js"></script>
-    <script src="assets/js/insta-slider.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/insta-slider.js"></script>
+    <script src="assets/js/about-testimonials.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 

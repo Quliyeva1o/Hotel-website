@@ -59,22 +59,46 @@ class Blogs {
                     <div class="image">
                         <img src="${blog.imgSrc}">
                     </div>
-                    <div class="update">
-                        <input type="text" value="${blog.title}" class="form-control" data-blogid="${blog.id}">
+                    <div class="update d-flex ">
+                        <div class="d-flex flex-column w-100 "><input type="text" value="${blog.title}" class="form-control" data-blogid="${blog.id}" id="inp">
+                        <span class="blogmodalerr d-none">input should not be empty!</span></div>
                         <a href="#" class="edit">edit</a>
+                        <a href="#" class="cancel">cancel</a>
                     </div>
                 </div>`;
 
+
+            const errsp = this.modal.querySelector('.blogmodalerr');
             const editButton = this.modal.querySelector('.edit');
+            const cancelButton = this.modal.querySelector('.cancel');
             const input = this.modal.querySelector('input[type="text"]');
             editButton.addEventListener('click', (e) => {
+                const inp = this.modal.querySelector('#inp');
                 e.preventDefault();
-                const newTitle = input.value;
-                this.modal.classList.replace('d-flex', 'd-none');
-                blog.title = newTitle;
-                this.updateBlogTitle(blogId, newTitle);
-                this.renderBlog(blog);
+                if (inp.value == "") {
+                    errsp.classList.replace('d-none', 'd-flex')
+                }
+
+                else {
+                    const newTitle = input.value;
+                    this.modal.classList.replace('d-flex', 'd-none');
+                    blog.title = newTitle;
+                    this.updateBlogTitle(blogId, newTitle);
+                    this.renderBlog(blog);
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Edited Successfully!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                }
             });
+            cancelButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                this.modal.classList.replace('d-flex', 'd-none');
+            })
         }
     }
 

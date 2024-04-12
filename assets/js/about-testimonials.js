@@ -46,24 +46,30 @@ function renderEmployees(array) {
 function renderEmployeesHTML(employe) {
     return `
 <div class="item">
-<div class="testimonial">
-    <span class="icon-quote-left" id="read" data-id="${employe.id}"> <i class="fa-solid fa-quote-left"></i></span>
-    <blockquote>
-        <p>${employe.comment}</p>
-    </blockquote>
-    <div class="author">
-        <div class="d-flex align-items-center">
-            <div class="img mr-3">
+<div class="testimonial"><div class="img mr-3">
                 <img src="${employe.imgSrc}" alt="Image" class="img-fluid">
             </div>
-            <div class="justify-content-between d-flex w-100 align-items-center">
-            <div class="text">
-                <strong class="d-block">${employe.fullName}</strong>
-                <span>${employe.position}</span>
+            <div class="author">
+            <div class="d-flex align-items-center">
+                
+                <div class="justify-content-between d-flex w-100 align-items-center">
+                <div class="text">
+                    <strong class="d-block">${employe.fullName}</strong>
+                    <span>${employe.position}</span>
+                </div>
+                
+
+                <div>
+               
+                 <a href="#" class="deltes" data-id="${employe.id}"> del</a></div></div>
             </div>
-            <div> <a href="#" class="deltes" data-id="${employe.id}"> del</a></div></div>
         </div>
-    </div>
+    <blockquote>
+
+        <p>${employe.comment}</p>
+        <a class="link" id="read" data-id="${employe.id}"> Read more</a>
+    </blockquote>
+   
 </div>
 </div>
 `

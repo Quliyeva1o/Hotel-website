@@ -13,7 +13,7 @@
 <body>
 
     <!--header start-->
-    <header>
+    <header class="our-services-header">
         <div class="" id="nav-scroll">
             <nav class="container">
                 <div class="nv">
@@ -61,7 +61,7 @@
                                             <a href="menu.html">Destination</a>
                                         </li>
                                         <li>
-                                            <a href="our-services.html">Services</a>
+                                            <a href="gallery.html">Services</a>
                                         </li>
                                         <li>
                                             <a href="about.html">About</a>
@@ -81,9 +81,10 @@
         </div>
         <div class="container">
             <div class="hero-section col-lg-8 text-center d-flex justify-content-center">
-                <h1 class="w-100">Once a year go someplace you've never
-                    been before.</h1>
-                <a href="" id="see-video-btn">See video</a>
+                <h1 class="w-100">Our Services</h1>
+                <p class="text-white-50 w-75 mx-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">Far
+                    far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                    blind texts.</p>
 
             </div>
         </div>
@@ -97,8 +98,8 @@
         <!--header end-->
     </header>
 
-    <!--search section-->
-    <section class="search-section">
+
+    <section class="search-section d-none ">
         <div class="container flex-column flex-lg-row   ">
 
             <div class="w-100">
@@ -116,7 +117,6 @@
         </div>
         <!--search section end-->
     </section>
-
     <!--our services start-->
     <section class="our-services-section">
         <div class="container d-flex justify-content-between ">
@@ -180,7 +180,7 @@
                     <img src="assets/images/about.jpg" alt="Image" class="w-100">
                 </div>
                 <div class="col-lg-4 align-self-center content">
-                    <h2 class="heading mb-4">About Hotell</h2>
+                    <h2 class="heading mb-4">WHY US</h2>
                     <p class="p">Far far away, behind the word mountains, far from the countries Vokalia and
                         Consonantia, there
                         live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
@@ -192,98 +192,6 @@
             </div>
         </div>
     </section>
-
-
-    <section class="blog-section">
-        <div class="container">
-            <h1 class="heading">BLOG POSTS</h1>
-        </div>
-        <div class="blog-slider">
-            <div class="container" id="blogs">
-            </div>
-
-        </div>
-        <div class="blog-modal d-none " id="blog-modal">
-
-        </div>
-        <div class="custom-pagination container justify-content-center ">
-            <div class="custom-pagination-button" id="blog-prev-btn">Prev</div>
-            <div class="custom-pagination-button" id="blog-next-btn">Next</div>
-        </div>
-
-    </section>
-
-    <section class="faqs-section">
-
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-3 mt-4 ">
-                    <h2 class="heading text-black">Frequently Asked Questions</h2>
-                </div>
-                <div class="col-lg-8 ">
-                    <div class="accordion" id="accordion">
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="testimonials">
-        <div class="container">
-            <div class="row align-items-center justify-content-between ">
-                <div class="col-lg-3">
-                    <h2 class="heading">Testimonials</h2>
-                </div>
-                <div class="col-lg-6">
-                    <p class="p">
-                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-                <div class="col-lg-3 justify-content-end d-flex">
-                    <a href="" class="btn1 text-nowrap m-0" id="add-employee">Add employee</a>
-                </div>
-
-
-            </div>
-            <div class="d-none" id="test-modal">
-                <div class="modal d-flex flex-column">
-
-                    <div> <i class="fa-solid fa-close" id="close-test"></i>
-                        <input type="text" class="form-control " placeholder="Full Name" id="test-full-name">
-                        <span class="d-none">input should not be empty!</span>
-                        <input type="text" class="form-control " placeholder="Position" id="test-position">
-                        <span class="d-none">input should not be empty!</span>
-                        <input type="text" class="form-control " placeholder="Comment" id="test-comment">
-                        <span class="d-none">input should not be empty!</span>
-                        <input type="text" class="form-control " placeholder="imgSrc" id="test-image">
-                        <span class="d-none">input should not be empty!</span>
-                        <a href="" class="btn1" id="add-test">add</a>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="test-read-modal d-none " id="test-read-modal">
-
-            </div>
-            <div class="testimonials-slider">
-                <div class="test-slider-content"></div>
-
-            </div>
-
-            <div class="custom-pagination container justify-content-center ">
-                <div class="test-prev">Prev</div>
-                <div class="test-next">Next</div>
-            </div>
-
-        </div>
-    </section>
-
 
     <section class="section sec-instagram">
         <div class="container mb-5">
@@ -559,6 +467,7 @@
     </section>
 
 
+
     <footer class="site-footer bg-light">
         <div class="container">
             <div class="row">
@@ -634,10 +543,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="assets/js/services.js"></script>
     <script src="assets/js/nav.js"></script>
-    <script src="assets/js/seeVideo.js"></script>
-    <script src="assets/js/blog.js"></script>
-    <script src="assets/js/faqs.js"></script>
-    <script src="assets/js/testimonials.js"></script>
     <script src="assets/js/insta-slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
