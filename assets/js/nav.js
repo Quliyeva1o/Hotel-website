@@ -6,3 +6,8 @@ window.addEventListener('scroll', function() {
         navActive.classList.remove('nav-active');
     }
 });
+
+
+
+
+

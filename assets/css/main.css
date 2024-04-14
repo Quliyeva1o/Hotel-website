@@ -16,7 +16,7 @@ body {
   background-color: #f8f9fa;
 }
 
-.p, .about-testimonials .link, .about-testimonials .test-slider-content p, .about-testimonials .test-slider-content .item .text span, #service-modal .slider-item p, #service-modal .slider-item .about-testimonials .test-slider-content .item .text span, .about-testimonials .test-slider-content .item .text #service-modal .slider-item span, .our-services-section .slider-container .slider-list .slider-item p {
+.p, .contact-section p, .about-testimonials .link, .about-testimonials .test-slider-content p, .about-testimonials .test-slider-content .item .text span, #service-modal .slider-item p, #service-modal .slider-item .about-testimonials .test-slider-content .item .text span, .about-testimonials .test-slider-content .item .text #service-modal .slider-item span, .our-services-section .slider-container .slider-list .slider-item p {
   color: rgba(0, 0, 0, 0.5) !important;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
@@ -48,7 +48,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.btn1, .about-testimonials .test-slider-content .item .deltes, #test-read-modal .item .testimonial .close, .testimonials .test-slider-content .item .testimonial .deltes, .blog-section .blog-modal div .update a, .our-services-section .modal .modal-content button, .our-services-section > .container #add, .search-section .container button, header .hero-section a {
+.btn1, .table-section a, .about-testimonials .test-slider-content .item .deltes, #test-read-modal .item .testimonial .close, .testimonials .test-slider-content .item .testimonial .deltes, .blog-section .blog-modal div .update a, .our-services-section .modal .modal-content button, .our-services-section > .container #add, .search-section .container button, header .hero-section a {
   padding: 15px 30px;
   border-radius: 30px;
   border: none;
@@ -349,6 +349,11 @@ header .nav-active nav .logo {
   width: 25%;
   margin-top: 20px;
 }
+@media screen and (max-width: 576px) {
+  .our-services-section .modal .modal-content button {
+    width: 50%;
+  }
+}
 .our-services-section .modal .modal-content .close {
   position: absolute;
   top: 0;
@@ -611,6 +616,11 @@ header .nav-active nav .logo {
   justify-content: space-between;
   width: 100%;
 }
+@media screen and (max-width: 576px) {
+  .blog-section .blog-modal div .update {
+    flex-direction: column;
+  }
+}
 .blog-section .blog-modal div .update input {
   margin-top: 20px;
   height: 50px;
@@ -621,6 +631,12 @@ header .nav-active nav .logo {
   display: flex;
   margin: 20px;
   margin-right: 0;
+}
+@media screen and (max-width: 576px) {
+  .blog-section .blog-modal div .update a {
+    margin: 5px auto;
+    padding: 10px 70px;
+  }
 }
 
 .faqs-section {
@@ -1111,4 +1127,105 @@ footer .social a span {
 }
 .contact-header .hero-section h1 {
   margin-bottom: 1rem;
+}
+
+.contact-section {
+  padding: 7rem 0;
+  background-color: #fff;
+}
+.contact-section .warn {
+  padding-left: 16px;
+  color: red;
+}
+.contact-section .form-control {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-color: transparent;
+  background: #f8f9fa !important;
+}
+.contact-section .btn1, .contact-section .table-section a, .table-section .contact-section a, .contact-section header .hero-section a, header .hero-section .contact-section a, .contact-section .search-section .container button, .search-section .container .contact-section button, .contact-section .our-services-section > .container #add, .our-services-section > .container .contact-section #add, .contact-section .our-services-section .modal .modal-content button, .our-services-section .modal .modal-content .contact-section button, .contact-section .blog-section .blog-modal div .update a, .blog-section .blog-modal div .update .contact-section a, .contact-section .testimonials .test-slider-content .item .testimonial .deltes, .testimonials .test-slider-content .item .testimonial .contact-section .deltes, .contact-section #test-read-modal .item .testimonial .close, #test-read-modal .item .testimonial .contact-section .close, .contact-section .about-testimonials .test-slider-content .item .deltes, .about-testimonials .test-slider-content .item .contact-section .deltes {
+  padding: 10px !important;
+  width: 50% !important;
+}
+@media screen and (max-width: 576px) {
+  .contact-section .btn1, .contact-section .table-section a, .table-section .contact-section a, .contact-section header .hero-section a, header .hero-section .contact-section a, .contact-section .search-section .container button, .search-section .container .contact-section button, .contact-section .our-services-section > .container #add, .our-services-section > .container .contact-section #add, .contact-section .our-services-section .modal .modal-content button, .our-services-section .modal .modal-content .contact-section button, .contact-section .blog-section .blog-modal div .update a, .blog-section .blog-modal div .update .contact-section a, .contact-section .testimonials .test-slider-content .item .testimonial .deltes, .testimonials .test-slider-content .item .testimonial .contact-section .deltes, .contact-section #test-read-modal .item .testimonial .close, #test-read-modal .item .testimonial .contact-section .close, .contact-section .about-testimonials .test-slider-content .item .deltes, .about-testimonials .test-slider-content .item .contact-section .deltes {
+    width: 30%;
+  }
+}
+.contact-section .disabled {
+  background-color: red;
+}
+.contact-section .enabled {
+  background-color: #00917c;
+}
+.contact-section input {
+  height: 52px;
+  border-radius: 30px;
+}
+.contact-section textarea {
+  border-radius: 10px;
+}
+.contact-section a {
+  color: #00917c;
+}
+.contact-section h3 {
+  color: #52565e !important;
+}
+.contact-section label {
+  color: rgba(0, 0, 0, 0.5);
+}
+.contact-section .social {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.contact-section .social a {
+  background-color: #00917c;
+  color: #000;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+}
+.contact-section .social a:hover {
+  background: #00c4a8;
+}
+.contact-section .social a span {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+tr.customer-read {
+  background-color: red !important; /* Use !important to ensure this rule override*/
+}
+
+table {
+  --bs-table-bg:none!important;
+}
+
+.table-section {
+  padding: 7rem 0;
+}
+.table-section tr.customer-read {
+  background-color: red !important;
+}
+.table-section input, .table-section select {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  align-items: center;
+  margin-right: 30px;
+}
+.table-section select {
+  border-radius: 10px;
+  background-color: #00917c;
+  color: #fff;
+}
+.table-section a {
+  text-wrap: nowrap;
 }/*# sourceMappingURL=main.css.map */

@@ -260,6 +260,8 @@ function renderServices(array) {
 
 
 function renderServiceHTML(service) {
+    const createdAtFormatted = moment(service.created_at).format('lll'); 
+
     return `
         <div class="slider-item">
             <div class="box text-start w-100">
@@ -271,7 +273,7 @@ function renderServiceHTML(service) {
                     <p>${service.content}</p>
                 </div>
                 <div class="learn-more">
-                    <span>${service.created_at}</span>
+                    <span>${createdAtFormatted}</span> <!-- Display the formatted date -->
                     <div class="d-flex links">
                         <a href="" class="learn-more-btn" data-id="${service.id}">Learn more</a>
                         <a href="#" class="del" data-id="${service.id}">Delete</a>
@@ -280,7 +282,6 @@ function renderServiceHTML(service) {
             </div>
         </div>
     `;
-
 }
 
 

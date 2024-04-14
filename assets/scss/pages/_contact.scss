@@ -1,6 +1,5 @@
 .contact-header {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../../../assets/images/blog4.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/images/blog4.jpg);
     height: 100vh;
     background-size: cover;
     min-height: 780px;
@@ -13,4 +12,116 @@
             margin-bottom: 1rem;
         }
     }
+}
+
+.contact-section {
+    padding: 7rem 0;
+    background-color: #fff;
+    .warn{
+        padding-left: 16px;
+        color: red;
+    }
+    p{
+        @extend .p;
+    }
+   
+    .form-control {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        border-color: transparent;
+        background: #f8f9fa !important;
+    }
+    .btn1{
+        padding: 10px !important;
+        width: 50%!important;
+       
+        @include for-phone{
+            width: 30%;
+        }
+      
+    }
+    .disabled{
+        background-color: red;
+    }
+    .enabled{
+        background-color: $green;
+    }
+    input {
+        height: 52px;
+        border-radius: 30px;
+    }
+    textarea {
+        border-radius: 10px;
+    }
+    a{color: $green;}
+    h3{
+        color: #52565e !important;
+    }
+    label{
+        color: rgba(0, 0, 0, 0.5);
+    }
+    .social {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        a {
+            background-color: #00917c;
+            color: #000;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border-radius: 50%;
+            display: flex;
+            &:hover {
+                background: #00c4a8;
+            }
+
+            span {
+                color: #fff;
+                font-size: 14px;
+                position: absolute;
+                top: 50%;
+
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+        }
+    }
+}
+
+
+
+
+tr.customer-read {
+    background-color: red !important; /* Use !important to ensure this rule override*/
+}
+table{
+    --bs-table-bg:none!important;
+}
+
+
+.table-section {
+    padding: 7rem 0;
+    tr.customer-read {
+        background-color: red !important;
+    }
+    input,select{
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 30px;
+        align-items: center;
+        margin-right: 30px;
+    }
+    select{
+        border-radius: 10px;
+        background-color: $green;
+        color: #fff;
+    }
+    a{
+        @extend .btn1;
+        text-wrap: nowrap;
+    }
+    
 }

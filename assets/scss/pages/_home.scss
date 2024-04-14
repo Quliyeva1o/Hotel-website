@@ -151,6 +151,9 @@
                 @extend .btn1;
                 width: 25%;
                 margin-top: 20px;
+                @include for-phone{
+                    width: 50%;
+                }
             }
             .close {
                 position: absolute;
@@ -422,6 +425,9 @@
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+                @include for-phone{
+                    flex-direction: column;
+                }
                 input {
                     margin-top: 20px;
                     height: 50px;
@@ -433,6 +439,10 @@
                     display: flex;
                     margin: 20px;
                     margin-right: 0;
+                    @include for-phone{
+                        margin: 5px auto;
+                        padding:10px 70px ;
+                    }
                 }
             }
         }
@@ -787,6 +797,7 @@ footer {
         font-size: 14px;
         font-family: $roboto;
     }
+   
     .social {
         display: flex;
         gap: 5px;

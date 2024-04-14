@@ -1,3 +1,31 @@
+const blogsContainer = document.getElementById("blogs");
+const blogPrevBtn = document.getElementById("blog-prev-btn");
+const blogNextBtn = document.getElementById("blog-next-btn");
+const blogModal = document.getElementById("blog-modal");
+
+
+const blogsData = [
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/about.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog2.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog3.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog4.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/about.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog2.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog3.jpg' },
+    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog4.jpg' }
+];
+
+
+
+class BlogPost {
+    constructor(title, imgSrc) {
+        this.title = title;
+        this.imgSrc = imgSrc;
+        this.id = BlogPost.idCounter++;
+    }
+}
+BlogPost.idCounter = 0;
+
 class Blogs {
     constructor(container, prevButton, nextButton, modal) {
         this.container = container;
@@ -108,19 +136,6 @@ class Blogs {
     }
 }
 
-class BlogPost {
-    constructor(title, imgSrc) {
-        this.title = title;
-        this.imgSrc = imgSrc;
-        this.id = BlogPost.idCounter++;
-    }
-}
-BlogPost.idCounter = 0;
-
-const blogsContainer = document.getElementById("blogs");
-const blogPrevBtn = document.getElementById("blog-prev-btn");
-const blogNextBtn = document.getElementById("blog-next-btn");
-const blogModal = document.getElementById("blog-modal");
 
 const blogs = new Blogs(blogsContainer, blogPrevBtn, blogNextBtn, blogModal);
 
@@ -130,16 +145,6 @@ function createBlogs(blogsData) {
     });
 }
 
-const blogsData = [
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/about.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog2.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog3.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog4.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/about.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog2.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog3.jpg' },
-    { title: 'Far far away, behind the word mountains, far from the countries', imgSrc: 'assets/images/blog4.jpg' }
-];
 
 createBlogs(blogsData);
 
